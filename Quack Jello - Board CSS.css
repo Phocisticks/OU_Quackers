@@ -1,0 +1,121 @@
+html,body,.col-md-12,.row {
+  height:100%;
+  background-color: grey;
+  font-family: Montserrat;
+  margin-bottom: 0;
+}
+.row > div {
+  height:100%;
+}
+  
+/* to make columns visible */
+.row .col-md-9 {
+  background-color:#eee;
+}
+.row .col-md-3 {
+  background-color:#ddd;
+}
+
+/* For the main part (left half) of the screen where the cards will go */
+#body-view {
+  background: #7c7c7c;
+  padding: 10px;
+}
+
+/* For the right part of the screen where the chat will go */
+#chat-view {
+  background: white;
+}
+
+/**************************************************************************************************/
+
+/* NAVBAR */
+.navbar-default {
+  border-radius: 0;
+	background-color: #f4ce42;
+	border: none;
+  margin-bottom: 0;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: black;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: #bafffd;
+}
+
+.navbar-default .navbar-brand {
+  color: black;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: white;
+}
+
+.btn-default {
+  background-color: transparent;
+}
+
+#board-name {
+  pointer-events:none;
+}
+
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+}
+
+.navbar-toggle {
+    z-index:3;
+}
+
+/**************************************************************************************************/
+
+/* DROPDOWN FADE */
+.open > .dropdown-menu {
+  animation-name: slidenavAnimation;
+  animation-duration:.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-name: slidenavAnimation;
+  -webkit-animation-duration:.2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+
+  -moz-animation-name: slidenavAnimation;
+  -moz-animation-duration:.2s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: forwards;
+}
+@keyframes slidenavAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slidenavAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/**************************************************************************************************/
+
+/* Material floating button in the body view */
+/* Inspired by: http://codepen.io/simoberny/pen/pJZJQY */
+
+/**************************************************************************************************/
+
