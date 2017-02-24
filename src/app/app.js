@@ -1,6 +1,15 @@
 import angular from 'angular';
+import 'angular-animate';
+import 'angular-aria';
+import 'angular-material';
+import 'angular-material/angular-material.css';
+import uirouter from 'angular-ui-router';
+import {HomeComponent} from './components/homecomponent/home.component.js';
+import {AppHeaderComponent} from './components/app-header/app-header.component.js';
 
 import '../style/app.css';
+import RoutesConfig from './config/routes.config';
+import ThemeProvider from './config/theme.config.js'
 
 let app = () => {
   return {
@@ -12,14 +21,19 @@ let app = () => {
 
 class AppCtrl {
   constructor() {
-    this.url = 'https://github.com/preboot/angular-webpack';
+
+
   }
 }
 
-const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [])
-  .directive('app', app)
-  .controller('AppCtrl', AppCtrl);
 
-export default MODULE_NAME;
+export default app = angular.module('app', [uirouter,'ngMaterial'])
+     .directive('app', app)
+     .controller('AppCtrl', AppCtrl)
+     .component('appHeader',AppHeaderComponent)
+     .component('homeComponent',HomeComponent)
+     .config(RoutesConfig)
+      .config(ThemeProvider);
+
+

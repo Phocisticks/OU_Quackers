@@ -1,7 +1,7 @@
 {
-  "name": "angular-webpack-workflow",
+  "name": "QuackJello",
   "version": "1.1.0",
-  "description": "A workflow for Angular made with Webpack",
+  "description": "QuackJello app",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
@@ -11,16 +11,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Foxandxss/angular-webpack-workflow.git"
+    "url": "https://github.com/Phocisticks/OU_Quackers.git"
   },
-  "author": "Jesus Rodriguez",
+  "author": "QuackJelloTeam",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Foxandxss/angular-webpack-workflow/issues"
+    "url": "https://github.com/Phocisticks/OU_Quackers/issues"
   },
-  "homepage": "https://github.com/Foxandxss/angular-webpack-workflow",
+  "homepage": "https://github.com/Phocisticks/OU_Quackers",
   "dependencies": {
-    "angular": "^1.5.0"
+    "angular": "^1.6.2",
+    "angular-animate": "^1.6.2",
+    "angular-aria": "^1.3.20",
+    "angular-material": "^1.1.3",
+    "angular-ui-router": "^1.0.0-beta.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.0",
