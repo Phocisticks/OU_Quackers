@@ -12,7 +12,7 @@ After you clone the repo.
 
 
 Project Structure
-This project has wepack and all cool features like hotreloading included so you dont have to reload your page everytime you change something in your code. You can find more info on webpack here https://webpack.github.io/docs/
+This project has wepack and all its cool features like hotreloading included so you dont have to reload your page everytime you change something in your code. You can find more info on webpack here https://webpack.github.io/docs/
 
 All our components will be in the OU_Quackers/src/app/components/
 
