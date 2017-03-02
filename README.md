@@ -16,16 +16,16 @@ This project has wepack and all cool features like hotreloading included so you 
 All our components will be in the OU_Quackers/src/app/components/
 
 Adding a component
-*1. Create a directory eg. LoginComponent in OU_Quackers/src/app/components/
-*2. Create the html template and js file for the component in your components directory. 
-*3. Now in app.js you will need to add your component to the module.
-     *a) First import your component
+
+* 1. Create a directory eg. LoginComponent in OU_Quackers/src/app/components/
+* 2. Create the html template and js file for the component in your components directory. 
+* 3. Now in app.js you will need to add your component to the module.
+* a) First import your component
      
     ```javascript
-     import {LoginComponent} from './components/logincomponent/login.component.js';
+        import {LoginComponent} from './components/logincomponent/login.component.js';
      ```
-     
-     *b) Then add your component to the module
+ * b) Then add your component to the module
      
         ```javascript
             export default app = angular.module('app', [uirouter,'ngMaterial'])
@@ -35,15 +35,15 @@ Adding a component
                .component('homeComponent',HomeComponent)
                .component('LoginComponent', LoginComponent)
         ```
- Routes
- We are using angular ui-router for our routes. You can find more info on that here https://ui-router.github.io/ng1/tutorial/helloworld
+Routes
+We are using angular ui-router for our routes. You can find more info on that here https://ui-router.github.io/ng1/tutorial/helloworld
  
  All our views/states are registered in our routes.config file in OU_Quackers/src/app/config/
  
  In routes.config.js. We already have some states added for the homecomponent and toolbar and others  like the login state, forgot password state, commented out. 
  
  Adding a state
- *1. Add your new state to the $stateProvider 
+* 1. Add your new state to the $stateProvider 
    ```javascript
      .state('app.login', {
                  url: '/login',
@@ -55,7 +55,7 @@ Adding a component
                 }
             })
      ```
-  *2. Once your state has been added you can view it at the url you specified. eg. localhost:8080/login
+*2. Once your state has been added you can view it at the url you specified. eg. localhost:8080/login
   
   There is more information on how to navigate to a state and do other cool stuff like loading data before the view       appears(bindings) in the ui-router documentation. 
   
