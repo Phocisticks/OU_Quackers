@@ -19,11 +19,11 @@ Adding a component
 1. Create a directory eg. LoginComponent in OU_Quackers/src/app/components/
 2. Create the html template and js file for the component in your components directory. 
 3. Now in app.js you will need to add your component to the module.
-     First import your component 
+     a) First import your component 
     ```javascript
             import {LoginComponent} from './components/logincomponent/login.component.js';
      ```
-     Then add your component to the module
+     b) Then add your component to the module
         ```javascript
             export default app = angular.module('app', [uirouter,'ngMaterial'])
                .directive('app', app)
