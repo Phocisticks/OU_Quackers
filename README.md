@@ -55,7 +55,7 @@ We are using angular ui-router for our routes. You can find more info on that he
                 }
             })
      ```
-* Once your state has been added you can view it at the url you specified. eg. localhost:8080/login
+    * Once your state has been added you can view it at the url you specified. eg. localhost:8080/login
   
   There is more information on how to navigate to a state and do other cool stuff like loading data before the view       appears(bindings) in the ui-router documentation. 
   
