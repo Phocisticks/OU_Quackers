@@ -60,6 +60,6 @@ We are using angular ui-router for our routes. You can find more info on that he
   
   There is more information on how to navigate to a state and do other cool stuff like loading data before the view       appears(bindings) in the ui-router documentation. 
   
-  Also please look at the js file for home.component.js if you are confused on how to write the js code for your component 
+  Also please take a look at home.component.js if you are confused on how to write the js code for your component 
   more information on angular components here https://docs.angularjs.org/guide/component
 
