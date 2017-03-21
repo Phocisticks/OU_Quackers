@@ -1,3 +1,11 @@
+h3 {
+    margin-left: 10px;
+}
+
+.firstList {
+    margin-left: 12px;
+}
+
 .toolbar-user-avatar {
     width: 2rem;
     height: 2rem;

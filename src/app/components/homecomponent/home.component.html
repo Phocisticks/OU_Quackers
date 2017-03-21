@@ -3,31 +3,24 @@
 		<div ng-controller="AppCtrl" ng-cloak >
             <md-content class="md-padding" layout-xs="column" layout="row">	<!-- layout=column stretches cards across the screen -->
 
-                <!--START OF COLUMN 1-->
-                <div flex-xs flex-gt-xs="15" layout="column" id="column1">	<!-- layout=row puts cards on one line (row) -->
-
+                <div flex-xs flex-gt-xs="15" layout="column" id="column1">
+                    <h3 class="firstList">List</h3>
                     <div ng-repeat="card in vm.cards">
                         <md-card>
                             <md-card-title>
                                 <md-card-title-text>
-                                    <span class="md-headline">{{card}}</span>
-                                    <span class="md-subhead">Large</span>
-                                    <span class="md-subhead">Col 1</span>-
+                                    <span class="md-headline">{{card.title}}</span>
                                 </md-card-title-text>
-                                <md-card-title-media>
-                                    <div class="md-media-lg card-media"></div>
-                                </md-card-title-media>
                             </md-card-title>
-                            <md-card-actions layout="row" layout-align="end center">
-                                <md-button>Action 1</md-button>
-                                <md-button>Action 2</md-button>
-                            </md-card-actions>
+                            <md-card-content>
+                                <p>{{card.description}}</p>
+                            </md-card-content>
                         </md-card>
                     </div>
-
-                </div>	<!-- END OF COLUMN 1  -->
+                </div>
 
                 <div ng-repeat="list in vm.lists" flex-xs flex-gt-xs="15" layout="column" id="column2">
+                    <h3>{{list}}</h3>
                     <md-card>
                         <md-card-title>
                             <md-card-title-text>
@@ -47,196 +40,23 @@
                 </div>
 
             </md-content>
-
-			<!--<md-content class="md-padding" layout-xs="column" layout="row">	&lt;!&ndash; layout=column stretches cards across the screen &ndash;&gt;-->
-
-				 <!--&lt;!&ndash;START OF COLUMN 1&ndash;&gt;-->
-				<!--<div flex-xs flex-gt-xs="50" layout="column" id="column1">	&lt;!&ndash; layout=row puts cards on one line (row) &ndash;&gt;-->
-
-					<!--&lt;!&ndash; START OF LARGE CARD &ndash;&gt;-->
-					<!--<md-card>-->
-						<!--<md-card-title>-->
-							<!--<md-card-title-text>-->
-								<!--<span class="md-headline">Card with image</span>-->
-								<!--<span class="md-subhead">Large</span>-->
-								<!--<span class="md-subhead">Col 1</span>- -->
-							<!--</md-card-title-text>-->
-							<!--<md-card-title-media>-->
-								<!--<div class="md-media-lg card-media"></div>-->
-							<!--</md-card-title-media>-->
-						<!--</md-card-title>-->
-						<!--<md-card-actions layout="row" layout-align="end center">-->
-							<!--<md-button>Action 1</md-button>-->
-							<!--<md-button>Action 2</md-button>-->
-						<!--</md-card-actions>-->
-					<!--</md-card>	&lt;!&ndash; END OF LARGE CARD  &ndash;&gt;-->
-
-					<!--&lt;!&ndash; START OF XL CARD&ndash;&gt;-->
-					<!--<md-card>-->
-						<!--<md-card-title>-->
-							<!--<md-card-title-text>-->
-								<!--<span class="md-headline">Card with image</span>-->
-								<!--<span class="md-subhead">Medium</span>-->
-								<!--<span class="md-subhead">Col 1</span>-->
-							<!--</md-card-title-text>-->
-							<!--<md-card-title-media>-->
-								<!--<div class="md-media-md card-media"></div>-->
-							<!--</md-card-title-media>-->
-						<!--</md-card-title>-->
-						<!--<md-card-actions layout="row" layout-align="end center">-->
-							<!--<md-button>Action 1</md-button>-->
-							<!--<md-button>Action 2</md-button>-->
-						<!--</md-card-actions>-->
-					<!--</md-card>	&lt;!&ndash; END OF XL CARD &ndash;&gt;-->
-
-					<!--&lt;!&ndash; PLAIN CARD &ndash;&gt;-->
-					<!--<md-card>This is what a basic card looks like</md-card>-->
-
-				<!--</div>	&lt;!&ndash; END OF COLUMN 1  &ndash;&gt;-->
-
-
-				<!--&lt;!&ndash; START OF COLUMN 2 &ndash;&gt;-->
-				<!--<div flex-xs flex-gt-xs="50" layout="column" style="overflow: auto; height: 900px;" id="column2">-->
-
-					<!--&lt;!&ndash; START OF LARGE CARD &ndash;&gt;-->
-					<!--<md-card>-->
-						<!--<md-card-title>-->
-							<!--<md-card-title-text>-->
-								<!--<span class="md-headline">Card with image</span>-->
-								<!--<span class="md-subhead">Large</span>-->
-								<!--<span class="md-subhead">Col 2</span>-->
-							<!--</md-card-title-text>-->
-							<!--<md-card-title-media>-->
-								<!--<div class="md-media-lg card-media"></div>-->
-							<!--</md-card-title-media>-->
-						<!--</md-card-title>-->
-						<!--<md-card-actions layout="row" layout-align="end center">-->
-							<!--<md-button>Action 1</md-button>-->
-							<!--<md-button>Action 2</md-button>-->
-						<!--</md-card-actions>-->
-					<!--</md-card>	&lt;!&ndash; END OF LARGE CARD  &ndash;&gt;-->
-
-					<!--&lt;!&ndash; START OF LARGE CARD &ndash;&gt;-->
-					<!--<md-card>-->
-						<!--<md-card-title>-->
-							<!--<md-card-title-text>-->
-								<!--<span class="md-headline">Card with image</span>-->
-								<!--<span class="md-subhead">Large</span>-->
-								<!--<span class="md-subhead">Col 2</span>-->
-							<!--</md-card-title-text>-->
-							<!--<md-card-title-media>-->
-								<!--<div class="md-media-lg card-media"></div>-->
-							<!--</md-card-title-media>-->
-						<!--</md-card-title>-->
-						<!--<md-card-actions layout="row" layout-align="end center">-->
-							<!--<md-button>Action 1</md-button>-->
-							<!--<md-button>Action 2</md-button>-->
-						<!--</md-card-actions>-->
-					<!--</md-card>	&lt;!&ndash; END OF LARGE CARD &ndash;&gt;-->
-
-					<!--&lt;!&ndash; START OF LARGE CARD &ndash;&gt;-->
-					<!--<md-card>-->
-						<!--<md-card-title>-->
-							<!--<md-card-title-text>-->
-								<!--<span class="md-headline">Card with image</span>-->
-								<!--<span class="md-subhead">Large</span>-->
-								<!--<span class="md-subhead">Col 2</span>-->
-							<!--</md-card-title-text>-->
-							<!--<md-card-title-media>-->
-								<!--<div class="md-media-lg card-media"></div>-->
-							<!--</md-card-title-media>-->
-						<!--</md-card-title>-->
-						<!--<md-card-actions layout="row" layout-align="end center">-->
-							<!--<md-button>Action 1</md-button>-->
-							<!--<md-button>Action 2</md-button>-->
-						<!--</md-card-actions>-->
-					<!--</md-card>	&lt;!&ndash; END OF LARGE CARD  &ndash;&gt;-->
-
-					<!--&lt;!&ndash; START OF LARGE CARD &ndash;&gt;-->
-					<!--<md-card>-->
-						<!--<md-card-title>-->
-							<!--<md-card-title-text>-->
-								<!--<span class="md-headline">Card with image</span>-->
-								<!--<span class="md-subhead">Large</span>-->
-								<!--<span class="md-subhead">Col 2</span>-->
-							<!--</md-card-title-text>-->
-							<!--<md-card-title-media>-->
-								<!--<div class="md-media-lg card-media"></div>-->
-							<!--</md-card-title-media>-->
-						<!--</md-card-title>-->
-						<!--<md-card-actions layout="row" layout-align="end center">-->
-							<!--<md-button>Action 1</md-button>-->
-							<!--<md-button>Action 2</md-button>-->
-						<!--</md-card-actions>-->
-					<!--</md-card>	&lt;!&ndash; END OF LARGE CARD &ndash;&gt;-->
-
-					<!--&lt;!&ndash; START OF XL CARD &ndash;&gt;-->
-						<!--<md-card>-->
-						<!--<md-card-title>-->
-							<!--<md-card-title-text>-->
-								<!--<span class="md-headline">Card with image</span>-->
-								<!--<span class="md-subhead">Extra Large</span>-->
-								<!--<span class="md-subhead">Col 2</span>-->
-							<!--</md-card-title-text>-->
-						<!--</md-card-title>-->
-						<!--<md-card-content layout="row" layout-align="space-between">-->
-							<!--<div class="md-media-xl card-media"></div>-->
-
-							<!--<md-card-actions layout="column">-->
-								<!--<md-button class="md-icon-button" aria-label="Favorite">-->
-									<!--<md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>-->
-								<!--</md-button>-->
-								<!--<md-button class="md-icon-button" aria-label="Settings">-->
-									<!--<md-icon md-svg-icon="img/icons/menu.svg"></md-icon>-->
-								<!--</md-button>-->
-								<!--<md-button class="md-icon-button" aria-label="Share">-->
-									<!--<md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>-->
-								<!--</md-button>-->
-							<!--</md-card-actions>-->
-						<!--</md-card-content>-->
-					<!--</md-card>	&lt;!&ndash; END OF XL CARD &ndash;&gt;-->
-
-				<!--</div>	&lt;!&ndash; END OF COLUMN 2  &ndash;&gt;-->
-
-
-				<!--&lt;!&ndash; START OF COLUMN 3 &ndash;&gt;-->
-				<!--<div flex-xs flex-gt-xs="50" layout="column" style="overflow: auto; height: 900px;" id="column3">-->
-
-					<!--&lt;!&ndash; START OF LARGE CARD &ndash;&gt;-->
-					<!--<md-card>-->
-						<!--<md-card-title>-->
-							<!--<md-card-title-text>-->
-								<!--<span class="md-headline">Card with image</span>-->
-								<!--<span class="md-subhead">Large</span>-->
-								<!--<span class="md-subhead">Col 3</span>-->
-							<!--</md-card-title-text>-->
-							<!--<md-card-title-media>-->
-								<!--<div class="md-media-lg card-media"></div>-->
-							<!--</md-card-title-media>-->
-						<!--</md-card-title>-->
-						<!--<md-card-actions layout="row" layout-align="end center">-->
-							<!--<md-button>Action 1</md-button>-->
-							<!--<md-button>Action 2</md-button>-->
-						<!--</md-card-actions>-->
-					<!--</md-card>	&lt;!&ndash; END OF LARGE CARD  &ndash;&gt;-->
-
-				<!--</div>	&lt;!&ndash; END OF COLUMN 3  &ndash;&gt;-->
-
-			<!--</md-content>-->
 		</div>
 
         <md-fab-speed-dial class="speed-dial" md-open="false" md-direction="up" ng-class="'md-fling'">
             <md-fab-trigger>
                 <md-button aria-label="menu" class="md-fab md-primary">
+                    <md-tooltip md-direction="left" md-visible="tooltipVisible">Add</md-tooltip>
                     +
                 </md-button>
             </md-fab-trigger>
 
             <md-fab-actions>
                 <md-button ng-click="vm.createList($event)" aria-label="createList" class="md-fab md-raised md-mini">
+                    <md-tooltip md-direction="left" md-visible="tooltipVisible">Add List</md-tooltip>
                     L
                 </md-button>
                 <md-button ng-click="vm.createCard($event)" aria-label="createCard" class="md-fab md-raised md-mini">
+                    <md-tooltip md-direction="left" md-visible="tooltipVisible">Add Card</md-tooltip>
                     C
                 </md-button>
             </md-fab-actions>

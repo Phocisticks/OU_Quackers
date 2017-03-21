@@ -3,8 +3,15 @@ class HomeComponentController{
     constructor($mdDialog){
         'ngInject';
         this.$mdDialog = $mdDialog;
+        this.titles = [];
+        this.descriptions = [];
+        this.cards = this.titles.map(function (description, index) {
+            return {
+                title: description,
+                description: this.descriptions[index]
+            }
+        });
         this.lists = [];
-        this.cards = [];
     }
 
     $onInit(){
@@ -18,9 +25,12 @@ class HomeComponentController{
             template: require('./createCard.html'),
             controller: function($scope, $mdDialog){
                 $scope.closeDialog = function(){ $mdDialog.hide(); };
-                $scope.addCard = function(result){
-                    console.log(result);
-                    vm.cards.push(result);
+                $scope.addCard = function(){
+                    var card = new Array();
+                    card['title'] = document.getElementById('title').value;
+                    card['description'] = document.getElementById('description').value;
+
+                    vm.cards.push(card);
                     $mdDialog.hide();
                 };
             }
@@ -35,7 +45,9 @@ class HomeComponentController{
             controller: function($scope, $mdDialog){
                 $scope.closeDialog = function(){ $mdDialog.hide(); };
                 $scope.addList = function(){
-                    vm.lists.push(Math.random());
+                    var title = document.getElementById('listTitle').value;
+
+                    vm.lists.push(title);
                     $mdDialog.hide();
                 };
             }
