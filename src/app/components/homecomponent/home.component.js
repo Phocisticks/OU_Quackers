@@ -1,41 +1,55 @@
 class HomeComponentController{
+
     constructor($mdDialog){
         'ngInject';
         this.$mdDialog = $mdDialog;
+        this.titles = [];
+        this.descriptions = [];
+        this.cards = this.titles.map(function (description, index) {
+            return {
+                title: description,
+                description: this.descriptions[index]
+            }
+        });
+        this.lists = [];
     }
 
     $onInit(){
        console.log('homecomponent');
     }
 
-    addCard(ev){
+    createCard(ev){
+        var vm = this;
         this.$mdDialog.show({
             targetEvent: ev,
-            template: '<md-dialog flex="10">' +
-            '  <md-dialog-content>' +
-            '    <div layout-align="center" layout-padding="10">' +
-            '      <md-input-container class="md-block">' +
-            '        <input placeholder="Title">' +
-            '      </md-input-container>' +
-            '    </div>' +
-            '    <div layout-align="center" layout-padding="10">' +
-            '      <md-input-container class="md-block">' +
-            '        <label>Description</label>' +
-            '        <textarea rows="5"></textarea>' +
-            '      </md-input-container>' +
-            '    </div>' +
-            '  </md-dialog-content>' +
-            '  <md-dialog-actions>' +
-            '    <md-button ng-click="closeDialog()" class="md-primary">' +
-            '      Cancel' +
-            '    </md-button>' +
-            '    <md-button ng-click="closeDialog()" class="md-primary">' +
-            '      Create' +
-            '    </md-button>' +
-            '  </md-dialog-actions>' +
-            '</md-dialog>',
+            template: require('./createCard.html'),
             controller: function($scope, $mdDialog){
-                $scope.closeDialog = function(){$mdDialog.hide();};
+                $scope.closeDialog = function(){ $mdDialog.hide(); };
+                $scope.addCard = function(){
+                    var card = new Array();
+                    card['title'] = document.getElementById('title').value;
+                    card['description'] = document.getElementById('description').value;
+
+                    vm.cards.push(card);
+                    $mdDialog.hide();
+                };
+            }
+        })
+    }
+
+    createList(ev){
+        var vm = this;
+        this.$mdDialog.show({
+            targetEvent: ev,
+            template: require('./createList.html'),
+            controller: function($scope, $mdDialog){
+                $scope.closeDialog = function(){ $mdDialog.hide(); };
+                $scope.addList = function(){
+                    var title = document.getElementById('listTitle').value;
+
+                    vm.lists.push(title);
+                    $mdDialog.hide();
+                };
             }
         })
     }

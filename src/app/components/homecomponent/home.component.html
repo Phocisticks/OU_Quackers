@@ -1,71 +1,66 @@
-<div layout-fill>
-    <div flex-xs flex-gt-xs="20">
-        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">Card with image</span>
-                    <span class="md-subhead">Small</span>
-                </md-card-title-text>
-                <md-card-title-media>
-                    <div class="md-media-sm card-media"></div>
-                </md-card-title-media>
-            </md-card-title>
-            <md-card-actions layout="row" layout-align="end center">
-                <md-button>Action 1</md-button>
-                <md-button>Action 2</md-button>
-            </md-card-actions>
-        </md-card>
-        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">Card with image</span>
-                    <span class="md-subhead">Small</span>
-                </md-card-title-text>
-                <md-card-title-media>
-                    <div class="md-media-sm card-media"></div>
-                </md-card-title-media>
-            </md-card-title>
-            <md-card-actions layout="row" layout-align="end center">
-                <md-button>Action 1</md-button>
-                <md-button>Action 2</md-button>
-            </md-card-actions>
-        </md-card>
-    </div>
+<div ng-app="QuackJello">
+	<div layout-fill>
+		<div ng-controller="AppCtrl" ng-cloak >
+            <md-content class="md-padding" layout-xs="column" layout="row">	<!-- layout=column stretches cards across the screen -->
 
-    <div flex-xs flex-gt-xs="20">
-        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">Card with image</span>
-                    <span class="md-subhead">Small</span>
-                </md-card-title-text>
-                <md-card-title-media>
-                    <div class="md-media-sm card-media"></div>
-                </md-card-title-media>
-            </md-card-title>
-            <md-card-actions layout="row" layout-align="end center">
-                <md-button>Action 1</md-button>
-                <md-button>Action 2</md-button>
-            </md-card-actions>
-        </md-card>
-        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">Card with image</span>
-                    <span class="md-subhead">Small</span>
-                </md-card-title-text>
-                <md-card-title-media>
-                    <div class="md-media-sm card-media"></div>
-                </md-card-title-media>
-            </md-card-title>
-            <md-card-actions layout="row" layout-align="end center">
-                <md-button>Action 1</md-button>
-                <md-button>Action 2</md-button>
-            </md-card-actions>
-        </md-card>
-    </div>
+                <div flex-xs flex-gt-xs="15" layout="column" id="column1">
+                    <h3 class="firstList">List</h3>
+                    <div ng-repeat="card in vm.cards">
+                        <md-card>
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">{{card.title}}</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-content>
+                                <p>{{card.description}}</p>
+                            </md-card-content>
+                        </md-card>
+                    </div>
+                </div>
 
-    <md-button ng-click="vm.addCard($event)" class="md-fab md-primary  md-fab-bottom-right" style="position: fixed !important;" aria-label="Use Android">
-    +
-    </md-button>
+                <div ng-repeat="list in vm.lists" flex-xs flex-gt-xs="15" layout="column" id="column2">
+                    <h3>{{list}}</h3>
+                    <md-card>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">{{card}}</span>
+                                <span class="md-subhead">Large</span>
+                                <span class="md-subhead">Col 1</span>-
+                            </md-card-title-text>
+                            <md-card-title-media>
+                                <div class="md-media-lg card-media"></div>
+                            </md-card-title-media>
+                        </md-card-title>
+                        <md-card-actions layout="row" layout-align="end center">
+                            <md-button>Action 1</md-button>
+                            <md-button>Action 2</md-button>
+                        </md-card-actions>
+                    </md-card>
+                </div>
+
+            </md-content>
+		</div>
+
+        <md-fab-speed-dial class="speed-dial" md-open="false" md-direction="up" ng-class="'md-fling'">
+            <md-fab-trigger>
+                <md-button aria-label="menu" class="md-fab md-primary">
+                    <md-tooltip md-direction="left" md-visible="tooltipVisible">Add</md-tooltip>
+                    +
+                </md-button>
+            </md-fab-trigger>
+
+            <md-fab-actions>
+                <md-button ng-click="vm.createList($event)" aria-label="createList" class="md-fab md-raised md-mini">
+                    <md-tooltip md-direction="left" md-visible="tooltipVisible">Add List</md-tooltip>
+                    L
+                </md-button>
+                <md-button ng-click="vm.createCard($event)" aria-label="createCard" class="md-fab md-raised md-mini">
+                    <md-tooltip md-direction="left" md-visible="tooltipVisible">Add Card</md-tooltip>
+                    C
+                </md-button>
+            </md-fab-actions>
+        </md-fab-speed-dial>
+
+	</div>
 </div>
