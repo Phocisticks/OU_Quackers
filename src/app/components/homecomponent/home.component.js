@@ -53,6 +53,31 @@ class HomeComponentController{
             }
         })
     }
+
+    editCard(ev, cardIndex){
+        var vm = this;
+        this.$mdDialog.show({
+            targetEvent: ev,
+            template: require('./editCard.html'),
+            controller: function($scope, $mdDialog){
+                //var currentTitle = document.getElementById('cardTitle'+cardIndex).innerText;
+
+                //this.title.value(oldTitle);
+                //sam - how to change text of mddialog??
+                // angular.getElementById('editTitle').val(title);
+
+                $scope.closeDialog = function(){ $mdDialog.hide(); };
+                $scope.editCard = function(){
+                    var card = [];
+                    card['title'] = document.getElementById('title').value;
+                    card['description'] = document.getElementById('description').value;
+
+                    vm.cards[cardIndex] = card;
+                    $mdDialog.hide();
+                };
+            }
+        })
+    }
 }
 
 export const HomeComponent = {
