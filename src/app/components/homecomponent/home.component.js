@@ -54,29 +54,44 @@ class HomeComponentController{
         })
     }
 
-    editCard(ev, cardIndex){
+    editCard(ev, card){
         var vm = this;
         this.$mdDialog.show({
             targetEvent: ev,
             template: require('./editCard.html'),
-            controller: function($scope, $mdDialog){
-                //var currentTitle = document.getElementById('cardTitle'+cardIndex).innerText;
-
-                //this.title.value(oldTitle);
-                //sam - how to change text of mddialog??
-                // angular.getElementById('editTitle').val(title);
-
-                $scope.closeDialog = function(){ $mdDialog.hide(); };
-                $scope.editCard = function(){
-                    var card = [];
-                    card['title'] = document.getElementById('title').value;
-                    card['description'] = document.getElementById('description').value;
-
-                    vm.cards[cardIndex] = card;
-                    $mdDialog.hide();
-                };
+            controller: EditCardDiaglogController,
+            controllerAs: 'vm',
+            locals:{
+              card: card
             }
         })
+    }
+}
+
+/**
+EditCardDiaglogController controls mdDialog for editing a card
+**/
+class EditCardDiaglogController{
+  constructor($scope,$mdDialog,card){
+        'ngInject';
+
+        this.$mdDialog = $mdDialog;
+        this.card = card;
+    }
+
+    hide() {
+      this.$mdDialog.hide();
+    }
+
+    cancel() {
+      this.$mdDialog.cancel();
+    }
+
+    //save changes
+    save(){
+      //do stuff to save changes
+
+      this.$mdDialog.hide();
     }
 }
 

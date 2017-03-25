@@ -2,21 +2,21 @@
     <md-dialog-content>
         <div layout-align="center" layout-padding="10">
             <md-input-container class="md-block">
-                <input id="title" placeholder="Title" ng-bind="card.title">
+                <input id="title" placeholder="Title" ng-model="vm.card.title">
             </md-input-container>
         </div>
         <div layout-align="center" layout-padding="10">
             <md-input-container class="md-block">
                 <label>Description</label>
-                <textarea id="description" rows="5"></textarea>
+                <textarea id="description" rows="5" ng-model="vm.card.description"></textarea>
             </md-input-container>
         </div>
     </md-dialog-content>
     <md-dialog-actions>
-        <md-button ng-click="closeDialog()" class="md-primary">
+        <md-button ng-click="vm.cancel()" class="md-primary">
             Cancel
         </md-button>
-        <md-button ng-click="editCard()" class="md-primary">
+        <md-button ng-click="vm.save()" class="md-primary">
             Save
         </md-button>
     </md-dialog-actions>
