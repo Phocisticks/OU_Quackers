@@ -4,17 +4,17 @@ export default function RoutesConfig($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-        // .state('app', {
-        //     abstract: true,
-        //     views: {
-        //         'toolbar@' :{
-        //             component: "appHeader",
-        //             bindings:{}
-        //         }
-        //     },
-        //     resolve:{}
-        // })
         .state('app', {
+            abstract: true,
+            views: {
+                'toolbar@' :{
+                    component: "appHeader",
+                    bindings:{}
+                }
+            },
+            resolve:{}
+        })
+        .state('app.landing', {
             url: '/',
             views: {
                 'toolbar@':{
@@ -27,16 +27,16 @@ export default function RoutesConfig($stateProvider, $urlRouterProvider) {
                 }
             },
             resolve: {}
-        });
-        // .state('app.login', {
-        //     url: '/login',
-        //     data: {auth:false},
-        //     views: {
-        //         'main@': {
-        //             component: "loginComponent"
-        //         }
-        //     }
-        // })
+        })
+        .state('app.login', {
+            url: '/login',
+            views: {
+              'toolbar@':{},
+                'main@': {
+                    component: "loginComponent"
+                }
+            }
+        })
         // .state('app.register', {
         //     url: '/register',
         //     data: {auth:false},
