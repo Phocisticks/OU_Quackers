@@ -53,6 +53,46 @@ class HomeComponentController{
             }
         })
     }
+
+    editCard(ev, card){
+        var vm = this;
+        this.$mdDialog.show({
+            targetEvent: ev,
+            template: require('./editCard.html'),
+            controller: EditCardDiaglogController,
+            controllerAs: 'vm',
+            locals:{
+              card: card
+            }
+        })
+    }
+}
+
+/**
+EditCardDiaglogController controls mdDialog for editing a card
+**/
+class EditCardDiaglogController{
+  constructor($scope,$mdDialog,card){
+        'ngInject';
+
+        this.$mdDialog = $mdDialog;
+        this.card = card;
+    }
+
+    hide() {
+      this.$mdDialog.hide();
+    }
+
+    cancel() {
+      this.$mdDialog.cancel();
+    }
+
+    //save changes
+    save(){
+      //do stuff to save changes
+
+      this.$mdDialog.hide();
+    }
 }
 
 export const HomeComponent = {
