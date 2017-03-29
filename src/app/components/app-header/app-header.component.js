@@ -53,6 +53,7 @@ class AppComponentController{
 
                   icon: 'img/duck.png',
 
+<<<<<<< HEAD
                   type: 'received'
                 };
 
@@ -72,9 +73,13 @@ class AppComponentController{
 
 }
 
+=======
+>>>>>>> master
 export const AppHeaderComponent = {
     template: require('./app-header.component.html'),
     controller: AppComponentController,
     controllerAs: 'vm',
-    bindings: {}
+    bindings: {
+      user:'<user'
+    }
 }

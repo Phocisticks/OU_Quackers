@@ -230,6 +230,7 @@ h3 {
     vertical-align: middle;
 }
 
+<<<<<<< HEAD
 ul.ChatLog {
   padding-left: 0;
   list-style: none;
@@ -333,3 +334,5 @@ ul.ChatLog {
   left: 10px;
   width: 77%;
 }
+=======
+>>>>>>> master

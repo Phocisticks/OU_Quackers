@@ -1,0 +1,62 @@
+<div layout='column' layout-align='center center'>
+  <div class="header">
+    <h1>Quack-Jello</h1>
+  </div>
+  <div ng-class="{'log-in': vm.$tog, 'active': vm.$act}" class="container">
+    <div class="box"></div>
+    <div class="container-forms">
+      <div class="container-info">
+        <div class="info-item">
+          <div class="table">
+            <div class="table-cell">
+              <p>
+                Have an account?
+              </p>
+              <div ng-click="vm.myFunc()" class="btn">
+                Log in
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="table">
+            <div class="table-cell">
+              <p>
+                Don't have an account? 
+              </p>
+              <div ng-click="vm.myFunc()" class="btn">
+                Sign up
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-form">
+        <div class="form-item log-in">
+          <div class="table">
+            <div class="table-cell">
+              <input name="Email" ng-model="vm.email" placeholder="Email" type="text" />
+              <input name="Password" ng-model="vm.password" placeholder="Password" type="Password" />
+              <div ng-class="{'red' : vm.$tog}" ng-click="vm.login()" class="btn nextPage">
+                Log in
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-item sign-up">
+          <div class="table">
+            <div class="table-cell">
+              <input name="email" ng-model="vm.email" placeholder="Email" type="text" />
+              <input name="fullName" placeholder="Full Name" type="text" />
+              <input name="Username" ng-model="vm.username" placeholder="Username" type="text" />
+              <input name="Password" ng-model="vm.password" placeholder="Password" type="Password" />
+              <div ng-click="vm.login()" class="btn nextPage">
+                Sign up
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,13 @@
-<md-dialog id="dialog" flex="10">
+<md-dialog id="dialog" flex="50">
     <md-dialog-content>
+        <div layout-align="center" layout-padding="10">
+            <!--<div layout="row">-->
+                <md-chips ng-model="vm.defaultLabels" readonly="false" md-removable="true"></md-chips>
+                <!--<md-button ng-click="vm.createLabel()" class="md-icon-button" aria-label="Create new label">-->
+                    <!--<md-icon md-svg-icon="img/more_vert.svg"></md-icon>-->
+                <!--</md-button>-->
+            <!--</div>-->
+        </div>
         <div layout-align="center" layout-padding="10">
             <md-input-container class="md-block">
                 <input id="title" placeholder="Title" ng-model="vm.card.title">
