@@ -35,7 +35,8 @@
         <div class="form-item log-in">
           <div class="table">
             <div class="table-cell">
-              <input name="Username" placeholder="Username" type="text" /><input name="Password" placeholder="Password" type="Password" />
+              <input name="Username" ng-model="vm.username" placeholder="Username" type="text" />
+              <input name="Password" ng-model="vm.password" placeholder="Password" type="Password" />
               <div ng-class="{'red' : vm.$tog}" ng-click="vm.myFunc2()" class="btn nextPage">
                 Log in
               </div>
@@ -45,10 +46,10 @@
         <div class="form-item sign-up">
           <div class="table">
             <div class="table-cell">
-              <input name="email" placeholder="Email" type="text" />
+              <input name="email" ng-model="vm.email" placeholder="Email" type="text" />
               <input name="fullName" placeholder="Full Name" type="text" />
-              <input name="Username" placeholder="Username" type="text" />
-              <input name="Password" placeholder="Password" type="Password" />
+              <input name="Username" ng-model="vm.username" placeholder="Username" type="text" />
+              <input name="Password" ng-model="vm.password" placeholder="Password" type="Password" />
               <div ng-click="vm.myFunc2()" class="btn nextPage">
                 Sign up
               </div>
