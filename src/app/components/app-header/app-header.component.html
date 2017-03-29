@@ -1,4 +1,4 @@
-<md-toolbar  class="md-whiteframe-1dp" layout="row" class="md-hue-2">
+<md-toolbar class="md-whiteframe-1dp" layout="row" class="md-hue-2">
     <md-button  aria-label="Settings">
         QuackJello
     </md-button>
@@ -7,7 +7,7 @@
         <md-menu>
             <md-button layout-align="center center"  aria-label="Open user menu" ng-click="$mdOpenMenu()" aria-label="side navigation">
                 <img class="toolbar-user-avatar"  src="img/user.png">
-                <span>Brandon Shaw</span>
+                <span>{{vm.user.firstname + ' ' + vm.user.lastname}}</span>
             </md-button>
             <md-menu-content width="3">
                 <md-menu-item>
@@ -30,9 +30,9 @@
                     </md-button>
                 </md-menu-item>
             </md-menu-content>
-          <md-button ng-click="vm.openRightMenu()" class="md-button">
-            Chat
-          </md-button>
+            <md-button ng-click="vm.openRightMenu()" class="md-button">
+              Chat
+            </md-button>
         </md-menu>
     </div>
 </md-toolbar>
