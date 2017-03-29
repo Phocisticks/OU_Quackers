@@ -7,7 +7,8 @@ class HomeComponentController{
     $onInit(){
        console.log('homecomponent');
     }
-
+    
+    
     addCard(ev){
         this.$mdDialog.show({
             targetEvent: ev,
