@@ -3,12 +3,15 @@ class HomeComponentController{
     constructor($mdDialog){
         'ngInject';
         this.$mdDialog = $mdDialog;
+
         this.titles = [];
         this.descriptions = [];
+        this.labels = [];
         this.cards = this.titles.map(function (description, index) {
             return {
                 title: description,
-                description: this.descriptions[index]
+                description: this.descriptions[index],
+                labels: this.labels[index]
             }
         });
         this.lists = [];
@@ -62,7 +65,8 @@ class HomeComponentController{
             controller: EditCardDiaglogController,
             controllerAs: 'vm',
             locals:{
-              card: card
+                card: card,
+                defaultLabels: ['Dev Complete', 'Testing Complete']
             }
         })
     }
@@ -72,15 +76,19 @@ class HomeComponentController{
 EditCardDiaglogController controls mdDialog for editing a card
 **/
 class EditCardDiaglogController{
-  constructor($scope,$mdDialog,card){
+    constructor($scope,$mdDialog,card,defaultLabels){
         'ngInject';
-
         this.$mdDialog = $mdDialog;
         this.card = card;
+        this.defaultLabels = defaultLabels;
     }
 
     hide() {
       this.$mdDialog.hide();
+    }
+
+    createLabel() {
+        console.log("Test");
     }
 
     cancel() {
@@ -89,9 +97,9 @@ class EditCardDiaglogController{
 
     //save changes
     save(){
-      //do stuff to save changes
-
-      this.$mdDialog.hide();
+        //do stuff to save changes
+        // this.card['label'] = "blank";
+        this.$mdDialog.hide();
     }
 }
 
