@@ -38,17 +38,25 @@
 </md-toolbar>
 
 <md-sidenav md-component-id="right" class="md-sidenav-right">
-  <div class="arrow"></div>
-  <ul class="ChatLog" ng-repeat="message in $root.messages">
-    <li class="ChatLog-entry" ng-class="{'ChatLog-entry-mine': message.type == 'sent'}">
-      <img class="ChatLog-avatar" src={{message.icon}} />
-      <p class="ChatLog-message">
-        {{message.data}}
-      </p>
-    </li>
-  </ul>
-  <form ng-submit="vm.send()">
-    <input ng-model="vm.msgVal" class="chat-box">
-    <input type="submit" class="send-button" value=" "/>
-  </form>
+    <div class="chat">
+        <!-- Message list -->
+        <div class="chat-history" id="chat-history">
+          <ul class="ChatLog" ng-repeat="message in $root.messages">
+            <li class="ChatLog-entry" ng-class="{'ChatLog-entry-mine': message.type == 'sent'}">
+              <img class="ChatLog-avatar" src={{message.icon}} />
+              <p class="ChatLog-message">
+                {{message.data}}
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Text area and "Send" button -->
+        <div class="send-message">
+            <form ng-submit="vm.send()">
+                <input ng-model="vm.msgVal" class="chat-box" placeholder="Send message">
+                <input type="submit" class="send-button" value=" "/>
+            </form>
+        </div>
+    </div>
 </md-sidenav>

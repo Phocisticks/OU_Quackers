@@ -63,7 +63,7 @@ class AppComponentController{
     }
 
     $onInit(){
-
+  
     }
 
     openRightMenu() {
