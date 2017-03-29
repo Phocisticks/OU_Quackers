@@ -6,30 +6,38 @@ export default function RoutesConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('app', {
             abstract: true,
+            data:{auth:false},
             views: {
                 'toolbar@' :{
                     component: "appHeader",
                     bindings:{}
                 }
             },
-            resolve:{}
+            resolve:{
+            }
         })
         .state('app.landing', {
             url: '/',
+            data:{auth:true},
             views: {
                 'toolbar@':{
                     component: "appHeader",
-                    bindings:{}
+                    bindings:{user: 'user'}
                 },
                 'main@' : {
                     component: "homeComponent",
                     bindings: {}
                 }
             },
-            resolve: {}
+            resolve: {
+              user:function(UserService){
+                return UserService.currentUser;
+              }
+            }
         })
         .state('app.login', {
             url: '/login',
+            data:{auth:false},
             views: {
               'toolbar@':{},
                 'main@': {
