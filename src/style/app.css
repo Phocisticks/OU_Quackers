@@ -18,3 +18,107 @@ h3 {
     bottom: 20px;
     right: 20px;
 }
+
+ul.ChatLog {
+  padding-left: 0;
+  list-style: none;
+}
+
+.ChatLog {
+  max-width: 20em;
+  margin: 0 auto;
+}
+.ChatLog .ChatLog-entry {
+  margin: .5em;
+}
+
+.ChatLog-entry {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  max-width: 100%;
+}
+
+.ChatLog-entry.ChatLog-entry-mine {
+  flex-direction: row-reverse;
+}
+
+.ChatLog-avatar {
+  flex-shrink: 0;
+  flex-grow: 0;
+  z-index: 1;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+}
+
+.ChatLog-entry.ChatLog-entry-mine
+.ChatLog-avatar {
+  display: none;
+}
+
+.ChatLog-entry .ChatLog-message {
+  position: relative;
+  margin: 0 12px;
+}
+
+.ChatLog-entry .ChatLog-message::before {
+  position: absolute;
+  right: auto;
+  bottom: .6em;
+  left: -12px;
+  height: 0;
+  content: '';
+  border: 6px solid transparent;
+  border-right-color: #ddd;
+  z-index: 2;
+}
+
+.ChatLog-entry.ChatLog-entry-mine .ChatLog-message::before {
+  right: -12px;
+  bottom: .6em;
+  left: auto;
+  border: 6px solid transparent;
+  border-left-color: #08f;
+}
+
+.ChatLog-message {
+  background-color: #ddd;
+  padding: .5em;
+  border-radius: 4px;
+  font-weight: lighter;
+  max-width: 70%;
+}
+
+.ChatLog-entry.ChatLog-entry-mine .ChatLog-message {
+  border-top: 1px solid #07f;
+  border-bottom: 1px solid #07f;
+  background-color: #08f;
+  color: #fff;
+}
+
+.ChatLog-message .ChatLog-timestamp {
+  display: none;
+}
+
+.send-button {
+  background: white url(../public/img/send.png);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: 7px 8px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 100px;
+  color: rgba(255,255,255,1.0);
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+}
+
+.chat-box {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  width: 77%;
+}
