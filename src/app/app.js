@@ -10,7 +10,10 @@ import {LoginComponent} from './components/login-component/login.component.js';
 
 import '../style/app.css';
 import RoutesConfig from './config/routes.config';
-import ThemeProvider from './config/theme.config.js'
+import ThemeProvider from './config/theme.config.js';
+import UserService from './services/user.service.js';
+import RoutesRun from './run/routes.run.js';
+
 
 let app = () => {
   return {
@@ -36,4 +39,6 @@ export default app = angular.module('app', [uirouter,'ngMaterial'])
      .component('homeComponent',HomeComponent)
      .component('loginComponent', LoginComponent)
      .config(RoutesConfig)
-      .config(ThemeProvider);
+      .config(ThemeProvider)
+      .run(RoutesRun)
+      .service('UserService',UserService);
