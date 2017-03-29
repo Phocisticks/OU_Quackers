@@ -1,6 +1,8 @@
 class LoginComponentController {
-    constructor(){
+   constructor($mdDialog, UserService, $state){
       'ngInject'
+      this.UserService = UserService;
+      this.$state = $state;
       this.$tog = false;
       this.$act = false;
       this.$bodyStyle = {backgroundColor: "#000"};
@@ -15,19 +17,22 @@ class LoginComponentController {
       console.log(this.$tog);
       this.$tog = !this.$tog;
     }
-    myFunc2(){
+    
+    login(){
       console.log(this.$act);
-      this.$act = !this.$act;
+      //log in the user and go to landing
+        if(this.UserService.login(this.email,this.password)){
+          this.$act = !this.$act;
+          console.log(this.UserService.isAuthenticated());
+          setTimeout(function(){
+            this.$state.go('app.landing', {}, {reload:true, inherit:false, notify:true});
+          },2400)
+        }else{
+          console.log("Hi");
+          console.log(this.UserService.isAuthenticated());
+          this.loginError = true;
+        };
     }
-
-//     $(document).ready(function(){
-// 	$(".info-item .btn").click(function(){
-//   	$(".container").toggleClass("log-in");
-// 	});
-// 	$(".container-form .btn").click(function(){
-//   	$(".container").addClass("active");
-// 	});
-// });
 }
 
 export const LoginComponent = {
