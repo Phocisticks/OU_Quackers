@@ -13,8 +13,7 @@ export default function RoutesConfig($stateProvider, $urlRouterProvider) {
                     bindings:{}
                 }
             },
-            resolve:{
-            }
+            resolve:{}
         })
         .state('app.landing', {
             url: '/',
@@ -39,9 +38,12 @@ export default function RoutesConfig($stateProvider, $urlRouterProvider) {
             url: '/login',
             data:{auth:false},
             views: {
-              'toolbar@':{},
+                'toolbar@':{
+                   
+                },
                 'main@': {
-                    component: "loginComponent"
+                    component: "loginComponent",
+                    bindings: {}
                 }
             }
         })

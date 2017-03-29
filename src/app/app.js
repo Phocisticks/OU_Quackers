@@ -6,7 +6,7 @@ import 'angular-material/angular-material.css';
 import uirouter from 'angular-ui-router';
 import {HomeComponent} from './components/homecomponent/home.component.js';
 import {AppHeaderComponent} from './components/app-header/app-header.component.js';
-import {LoginComponent} from './components/login-component/login.component.js';
+import {LoginComponent} from './components/LoginComponent/login.component.js'
 
 import '../style/app.css';
 import RoutesConfig from './config/routes.config';
