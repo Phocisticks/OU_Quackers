@@ -24,9 +24,10 @@ class LoginComponentController {
         if(this.UserService.login(this.email,this.password)){
           this.$act = !this.$act;
           console.log(this.UserService.isAuthenticated());
-          setTimeout(function(){
-            this.$state.go('app.landing', {}, {reload:true, inherit:false, notify:true});
-          },2400)
+          this.$state.go('app.landing', {}, {reload:true, inherit:false, notify:true});
+          // setTimeout(function(){
+          //   this.$state.go('app.landing', {}, {reload:true, inherit:false, notify:true});
+          // },2400)
         }else{
           console.log("Hi");
           console.log(this.UserService.isAuthenticated());
