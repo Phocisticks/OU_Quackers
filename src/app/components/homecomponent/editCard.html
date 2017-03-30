@@ -1,12 +1,16 @@
 <md-dialog id="dialog" flex="50">
     <md-dialog-content>
         <div layout-align="center" layout-padding="10">
-            <!--<div layout="row">-->
-                <md-chips ng-model="vm.defaultLabels" readonly="false" md-removable="true"></md-chips>
-                <!--<md-button ng-click="vm.createLabel()" class="md-icon-button" aria-label="Create new label">-->
-                    <!--<md-icon md-svg-icon="img/more_vert.svg"></md-icon>-->
-                <!--</md-button>-->
-            <!--</div>-->
+            <md-contact-chips
+                    ng-model="vm.card.labels"
+                    md-contacts="vm.querySearch($query)"
+                    md-contact-name="name"
+                    md-contact-image="image"
+                    md-require-match="true"
+                    md-highlight-flags="i"
+                    filter-selected="true"
+                    placeholder="Add Label">
+            </md-contact-chips>
         </div>
         <div layout-align="center" layout-padding="10">
             <md-input-container class="md-block">
@@ -21,9 +25,6 @@
         </div>
     </md-dialog-content>
     <md-dialog-actions>
-        <md-button ng-click="vm.cancel()" class="md-primary">
-            Cancel
-        </md-button>
         <md-button ng-click="vm.save()" class="md-primary">
             Save
         </md-button>

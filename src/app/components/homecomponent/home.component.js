@@ -32,6 +32,7 @@ class HomeComponentController{
                     var card = new Array();
                     card['title'] = document.getElementById('title').value;
                     card['description'] = document.getElementById('description').value;
+                    card['labels'] = [];
 
                     vm.cards.push(card);
                     $mdDialog.hide();
@@ -65,40 +66,72 @@ class HomeComponentController{
             controller: EditCardDiaglogController,
             controllerAs: 'vm',
             locals:{
-                card: card,
-                defaultLabels: ['Dev Complete', 'Testing Complete']
+                card: card
             }
         })
     }
 }
 
-/**
+/***
 EditCardDiaglogController controls mdDialog for editing a card
 **/
 class EditCardDiaglogController{
-    constructor($scope,$mdDialog,card,defaultLabels){
+    constructor($scope, $mdDialog, card){
         'ngInject';
         this.$mdDialog = $mdDialog;
         this.card = card;
-        this.defaultLabels = defaultLabels;
+        this.labels = this.loadLabels();
+    }
+
+    /**
+     * Search for contacts; use a random delay to simulate a remote call
+     */
+    querySearch (criteria) {
+        return criteria ? this.labels.filter(this.createFilterFor(criteria)) : [];
+    }
+
+    /***
+     * Create filter function for a query string
+     */
+    createFilterFor(query) {
+        var lowercaseQuery = angular.lowercase(query);
+
+        return function filterFn(label) {
+            return (label._lowername.indexOf(lowercaseQuery) != -1);
+        };
+
+    }
+
+    loadLabels() {
+        var labels = [
+            'Dev Complete',
+            'Bug Fix Pending',
+            'Design Complete',
+            'Blocked',
+            'Requirements Complete',
+            'Testing Complete',
+            'Finished',
+            'Verification Bug Not Fixed'
+        ];
+
+        return labels.map(function (c, index) {
+            var label = {
+                name: c,
+                image: '//www.gravatar.com/avatar/' + index + '?s=50&d=retro'
+            };
+
+            label._lowername = label.name.toLowerCase();
+            return label;
+        });
     }
 
     hide() {
       this.$mdDialog.hide();
     }
 
-    createLabel() {
-        console.log("Test");
-    }
-
-    cancel() {
-      this.$mdDialog.cancel();
-    }
-
     //save changes
     save(){
         //do stuff to save changes
-        // this.card['label'] = "blank";
         this.$mdDialog.hide();
     }
 }

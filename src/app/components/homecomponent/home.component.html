@@ -15,6 +15,9 @@
                             <md-card-content>
                                 <p id="cardDescription{{$index}}">{{card.description}}</p>
                             </md-card-content>
+                            <md-card-avatar>
+                                <img ng-repeat="label in card.labels" ng-src="{{label.image}}" class="md-card-image" title="{{label.name}}">
+                            </md-card-avatar>
                         </md-card>
                     </div>
                 </div>

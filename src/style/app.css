@@ -18,3 +18,9 @@ h3 {
     bottom: 20px;
     right: 20px;
 }
+
+.md-card-image {
+    height: 32px;
+    border-radius: 16px !important;
+    margin: 5px;
+}
