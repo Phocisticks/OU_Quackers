@@ -23,6 +23,11 @@ h3 {
     right: 20px;
 }
 
+.md-card-image {
+    height: 32px;
+    border-radius: 16px !important;
+    margin: 5px;
+}
 
 .header {
   text-align: center;
