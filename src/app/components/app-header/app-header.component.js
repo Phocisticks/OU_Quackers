@@ -2,8 +2,9 @@ class AppComponentController{
     constructor($mdSidenav,$rootScope,$timeout){
         'ngInject';
         this.$mdSidenav = $mdSidenav;
-        this.msgVal = '';
         this.chatTitle = 'General Chat';
+        this.msgPlaceHolder = 'Message ' + this.chatTitle;
+        this.msgVal = '';
         this.timeSent = '';
 
         // Message Inbox

@@ -317,26 +317,35 @@ ul.ChatLog {
   display: none;
 }
 
+.plus {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  height: 25px;
+  padding-top: 8.5px;
+  padding-bottom: 8.5px;
+}
+
 .send-button {
-  background: white url(../public/img/send.png);
+  background: url(../public/img/paperplane.svg);
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: 7px 8px;
   position: absolute;
+  border-width: 0;
   bottom: 10px;
-  right: 10px;
-  border-radius: 100px;
-  color: rgba(255,255,255,1.0);
+  right: 5px;
   width: 42px;
   height: 42px;
+  padding-right: 0px;
   overflow: hidden;
 }
 
 .chat-box {
   position: absolute;
-  bottom: 15px;
-  left: 10px;
-  width: 77%;
+  bottom: 18.5px;
+  left: 45px;
+  width: 70%;
 }
 
 .chat-title {
@@ -347,7 +356,7 @@ ul.ChatLog {
   padding-bottom: 20px;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   background-color: rgb(33,150,243);
   color: #FFF;
 }
@@ -357,4 +366,12 @@ ul.ChatLog {
   font-size: 12px;
   text-align: center;
   margin-top: 10px;
+}
+
+.exit-chat {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  height: 20px;
+  cursor: pointer;
 }
