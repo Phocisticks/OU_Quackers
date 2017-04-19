@@ -18,7 +18,7 @@ class HomeComponentController{
     }
 
     $onInit(){
-       console.log('homecomponent');
+      //  console.log('homecomponent');
     }
 
     createCard(ev){

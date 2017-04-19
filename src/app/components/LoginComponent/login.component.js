@@ -10,27 +10,27 @@ class LoginComponentController {
 
     $onInit(){
       // var toggle = false;
-      console.log('LoginComponent');
+      // console.log('LoginComponent');
     }
-    
+
     myFunc(){
       console.log(this.$tog);
       this.$tog = !this.$tog;
     }
-    
+
     login(){
-      console.log(this.$act);
+      // console.log(this.$act);
       //log in the user and go to landing
         if(this.UserService.login(this.email,this.password)){
           this.$act = !this.$act;
-          console.log(this.UserService.isAuthenticated());
+          // console.log(this.UserService.isAuthenticated());
           this.$state.go('app.landing', {}, {reload:true, inherit:false, notify:true});
           // setTimeout(function(){
           //   this.$state.go('app.landing', {}, {reload:true, inherit:false, notify:true});
           // },2400)
         }else{
-          console.log("Hi");
-          console.log(this.UserService.isAuthenticated());
+          // console.log("Hi");
+          // console.log(this.UserService.isAuthenticated());
           this.loginError = true;
         };
     }

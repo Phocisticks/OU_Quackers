@@ -38,17 +38,22 @@
 </md-toolbar>
 
 <md-sidenav md-component-id="right" class="md-sidenav-right">
+  <h2 class="chat-title">{{vm.chatTitle}}</h2>
+  <img class="exit-chat" ng-src="img/x.svg" ng-click="vm.openRightMenu()" />
+  <md-divider></md-divider>
+  <div class="time-sent">{{vm.timeSent}}</div>
   <div class="arrow"></div>
   <ul class="ChatLog" ng-repeat="message in $root.messages">
     <li class="ChatLog-entry" ng-class="{'ChatLog-entry-mine': message.type == 'sent'}">
-      <img class="ChatLog-avatar" src={{message.icon}} />
+      <img class="ChatLog-avatar" ng-src="{{message.icon}}" />
       <p class="ChatLog-message">
         {{message.data}}
       </p>
     </li>
   </ul>
   <form ng-submit="vm.send()">
-    <input ng-model="vm.msgVal" class="chat-box">
+    <img class="plus" ng-src="img/plus.svg" />
+    <input ng-model="vm.msgVal" class="chat-box" placeholder={{vm.msgPlaceHolder}}>
     <input type="submit" class="send-button" value=" "/>
   </form>
 </md-sidenav>
