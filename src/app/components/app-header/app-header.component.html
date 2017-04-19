@@ -38,10 +38,13 @@
 </md-toolbar>
 
 <md-sidenav md-component-id="right" class="md-sidenav-right">
+  <h2 class="chat-title">{{vm.chatTitle}}</h2>
+  <md-divider></md-divider>
+  <div class="time-sent">{{vm.timeSent}}</div>
   <div class="arrow"></div>
   <ul class="ChatLog" ng-repeat="message in $root.messages">
     <li class="ChatLog-entry" ng-class="{'ChatLog-entry-mine': message.type == 'sent'}">
-      <img class="ChatLog-avatar" src={{message.icon}} />
+      <img class="ChatLog-avatar" ng-src="{{message.icon}}" />
       <p class="ChatLog-message">
         {{message.data}}
       </p>

@@ -338,3 +338,23 @@ ul.ChatLog {
   left: 10px;
   width: 77%;
 }
+
+.chat-title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  background-color: rgb(33,150,243);
+  color: #FFF;
+}
+
+.time-sent {
+  color: #9e9ea6;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+}
